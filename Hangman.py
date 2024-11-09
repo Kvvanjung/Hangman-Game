@@ -110,7 +110,7 @@ def hangman_game():
         else: 
             wrong_guesses.add(guess)
             life -=1
-            print(f"\n\033[1;32mWrong guess! You have \033[1;31m{life}\033[0m lives left\033[0m")
+            print(f"\n\033[1;32mWrong guess! You have \033[1;31m{life}\033[0m \033[1;32mlives left\033[0m")
             print(life)
 
 
