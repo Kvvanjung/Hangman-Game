@@ -7,4 +7,4 @@ Python 3.x (No external libraries required)
 ## License
 This project is open-source and available under the MIT License.
 
-![Hangman Game](images/1.png)
+![Hangman Game](image/1.png)
