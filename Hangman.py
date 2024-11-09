@@ -76,11 +76,11 @@ def select_word():
 
 # User input a guess
 def make_guess():
- guess = input("Guess a letter:")
+ guess = input("Guess a letter:").upper()
  return guess
 
 def hangman_game():
-    word = select_word()
+    word = select_word().upper()
     letters_to_guess = set(word)
     correct_guesses = set()
     wrong_guesses = set()
@@ -123,7 +123,7 @@ def hangman_game():
         
 
     # Ask if the player wants to retry
-    retry = input("Retry? (Y/N):")
+    retry = input("Retry? (Y/N):").upper()
     if retry == "Y":
         hangman_game()
     else:

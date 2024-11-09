@@ -21,9 +21,8 @@ I took about 30 minutes to read the requirments and write the plan, and spend al
 # unfinished work
 I belive this program meets all the requirements, but there are few thing I would have worked on if I had more time.
 
-- Case Handling: This can be done easily by using .upper() on words and user input letter.
 - Adding more list of words by category: define few more list of words as constant and make select_word() to prompt user to choose category and return a random word from the appropriate list.
-- Web Interface: While the current game is a terminal-based application, I would have liked to implement a simple web interface using a framework like Flask or Django
+- Web Interface: While the current game is a terminal-based application, a simple web interface can be implement using a framework like Flask or Django
 
 ## License
 This project is open-source and available under the MIT License.
