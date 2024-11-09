@@ -2,7 +2,7 @@
 This is a simple Hangman game written in Python.
 
 ## Requirements
-Python 3.x (No external libraries required)
+Python (No external libraries required)
 
 ## Process
 First I took some time to read the challange to understand the requirements.
@@ -19,7 +19,7 @@ Also, I was lot more familiar with using list than sets, but while figuring out 
 I took about 30 minutes to read the requirments and write the plan, and spend almost 4 hours on writing the script.
 
 # unfinished work
-I belive this program meets all the requirements, but there are few thing I would have worked on if I had more time.
+I belive this program meets all the necessary requirements, but there are few thing I would have worked on if I had more time.
 
 - Adding more list of words by category: define few more list of words as constant and make select_word() to prompt user to choose category and return a random word from the appropriate list.
 - Web Interface: While the current game is a terminal-based application, a simple web interface can be implement using a framework like Flask or Django
