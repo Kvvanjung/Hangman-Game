@@ -18,14 +18,13 @@ def hangman_game():
     life = 6
     guesses = 0
 
-    print("Welcome to Hangman game!")
+    print("\nWelcome to Hangman game!")
     print(f"The word has {len(word)} letters")
 
     while life > 0:
         # Diplay the current guessed word
         display_word = [ltr if ltr in correct_guesses else "_" for ltr in word]
         print("Current word: ", " ".join(display_word))
-        print(f"Incorrect guesses: {', '.join(wrong_guesses)}")
     
         guess = make_guess()
         guesses += 1
@@ -34,20 +33,28 @@ def hangman_game():
         if guess in letters_to_guess:
             correct_guesses.add(guess)
             letters_to_guess.remove(guess)
-            print(f"Congrats, you guessed the letter {guess} right!")
+            print(f"\nCongrats, you guessed the letter {guess} right!")
         else: 
             wrong_guesses.add(guess)
             life -=1
-            print(f"Wrong guess! You have {life} lives left")
+            print(f"\nWrong guess! You have {life} lives left")
 
+        print(f"{guesses} guessess have been made")
+        print(f"correct: {len(set())} wrong:{guesses - len(set())}")
+
+    # Tell the result
     if len(letters_to_guess) == 0:
         print(f"Congratulations, you guessed the word {word} right!")
     else:
         print(f"Hangman died! The word was '{word}'")
-            
 
-        print(f"{guesses} guessess have been made")
-        print(f"correct: {len(set())} wrong:{guesses - len(set())}")
+    # Ask if the player wants to retry
+    retry = input("Retry? (Y/N):")
+    if retry == "Y":
+        hangman_game()
+    else:
+        print("Thanks for playing!")
+            
 
 
 def main():
