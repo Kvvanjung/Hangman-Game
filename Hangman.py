@@ -20,34 +20,35 @@ def hangman_game():
 
     print("Welcome to Hangman game!")
     print(f"The word has {len(word)} letters")
-    print(word)
 
     while life > 0:
         # Diplay the current guessed word
-        display_word = [ltr if ltr in letters_to_guess else "_" for ltr in word]
+        display_word = [ltr if ltr in correct_guesses else "_" for ltr in word]
         print("Current word: ", " ".join(display_word))
         print(f"Incorrect guesses: {', '.join(wrong_guesses)}")
     
         guess = make_guess()
+        guesses += 1
 
         # Check if the guess is correct
         if guess in letters_to_guess:
             correct_guesses.add(guess)
             letters_to_guess.remove(guess)
-            print(f"Congrats, you guessed the word {guess} right!")
-            guesses += 1
+            print(f"Congrats, you guessed the letter {guess} right!")
         else: 
             wrong_guesses.add(guess)
             life -=1
-            guesses += 1
+            print(f"Wrong guess! You have {life} lives left")
+
+    if len(letters_to_guess) == 0:
+        print(f"Congratulations, you guessed the word {word} right!")
+    else:
+        print(f"Hangman died! The word was '{word}'")
+            
 
         print(f"{guesses} guessess have been made")
         print(f"correct: {len(set())} wrong:{guesses - len(set())}")
-        
-        print(letters_to_guess)
-        print(correct_guesses)
-        print(wrong_guesses)
-        print(guesses)
+
 
 def main():
     hangman_game()
