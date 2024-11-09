@@ -18,7 +18,7 @@ Also, I was lot more familiar with using list than sets, but while figuring out 
 
 I took about 30 minutes to read the requirments and write the plan, and spend almost 4 hours on writing the script.
 
-## unfinished work
+## Unfinished work
 I belive this program meets all the necessary requirements, but there are few thing I would have worked on if I had more time.
 
 - Adding more list of words by category: define few more list of words as constant and make select_word() to prompt user to choose category and return a random word from the appropriate list.
