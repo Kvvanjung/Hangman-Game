@@ -87,6 +87,7 @@ def hangman_game():
     life = 6
     guesses = 0
 
+    # Greet the player
     print("\n\033[1;32mWelcome to Hangman game!","\033[0m")
     print(f"The word has \033[1;32m{len(word)}\033[0m letters")
 
