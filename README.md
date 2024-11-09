@@ -16,7 +16,7 @@ For example, I initially planned to define a display_word variable (which would 
 
 Also, I was lot more familiar with using list than sets, but while figuring out how to handle repeated letters and show incorrect guesses, I discovered that sets automatically handle duplicates. This was a helpful reminder, as I probably learned this concept at some point but had forgotten about it. It was a good practice to remind things like that.
 
-I took about 30 minutes to read the requirments and write the plan, and spend almost 4 hours on writing the script.
+I took about 30 minutes to read the requirments and write the plan, and spend 3-4 hours on writing the script.
 
 ## Unfinished work
 I belive this program meets all the necessary requirements, but there are few thing I would have worked on if I had more time.
