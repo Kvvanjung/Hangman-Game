@@ -1,6 +1,75 @@
 import random
 WORDS = ["lion", "elephant", "kangaroo", "dolphin", "panda", "giraffe", "penguin", "tiger", "owl", "cheetah"]
 
+# Draw a gallows and person
+def draw_hangman(life):
+    drawing = [
+        '''
+            -----
+            |   |
+            O   |
+           /|\\  |
+           / \\  |
+                |
+        ---------
+        ''',
+        '''
+            -----
+            |   |
+            O   |
+           /|\\  |
+           /    |
+                |
+        ---------
+        ''',
+        '''
+            -----
+            |   |
+            O   |
+           /|\\  |
+                |
+                |
+        ---------
+        ''',
+        '''
+            -----
+            |   |
+            O   |
+           /|   |
+                |
+                |
+        ---------
+        ''',
+        '''
+            -----
+            |   |
+            O   |
+            |   |
+                |
+                |
+        ---------
+        ''',
+        '''
+            -----
+            |   |
+            O   |
+                |
+                |
+                |
+        ---------
+        ''',
+        '''
+            -----
+            |   |
+                |
+                |
+                |
+                |
+        ---------
+        '''
+    ]
+    return drawing[life]
+
 # Select a word from WORDS
 def select_word():
     return random.choice(WORDS)
@@ -18,14 +87,17 @@ def hangman_game():
     life = 6
     guesses = 0
 
-    print("\nWelcome to Hangman game!")
-    print(f"The word has {len(word)} letters")
+    print("\n\033[1;32mWelcome to Hangman game!","\033[0m")
+    print(f"The word has \033[1;32m{len(word)}\033[0m letters")
 
-    while life > 0:
+    while len(letters_to_guess) > 0 and life > 0:
         # Diplay the current guessed word
         display_word = [ltr if ltr in correct_guesses else "_" for ltr in word]
-        print("Current word: ", " ".join(display_word))
-    
+        print(draw_hangman(life))
+        print("\033[1;32mCurrent word: ", " ".join(display_word), "\033[0m")
+        print(f"{guesses} guessess have been made (correct : {len(correct_guesses)} wrong : {guesses - len(correct_guesses)})")
+        print(f"wrong_guesses : \033[1;31m{', '.join(wrong_guesses)}\033[0m")
+
         guess = make_guess()
         guesses += 1
 
@@ -33,20 +105,21 @@ def hangman_game():
         if guess in letters_to_guess:
             correct_guesses.add(guess)
             letters_to_guess.remove(guess)
-            print(f"\nCongrats, you guessed the letter {guess} right!")
+            print(f"\n\033[1;32mCongrats, you guessed the letter {guess} right!\033[0m")
         else: 
             wrong_guesses.add(guess)
             life -=1
-            print(f"\nWrong guess! You have {life} lives left")
+            print(f"\n\033[1;32mWrong guess! You have \033[1;31m{life}\033[0m lives left\033[0m")
+            print(life)
 
-        print(f"{guesses} guessess have been made")
-        print(f"correct: {len(set())} wrong:{guesses - len(set())}")
 
     # Tell the result
-    if len(letters_to_guess) == 0:
-        print(f"Congratulations, you guessed the word {word} right!")
+    if life == 0:
+        print(draw_hangman(life))
+        print(f"\033[1;31mHangman died! The word was '{word}'\033[0m")
     else:
-        print(f"Hangman died! The word was '{word}'")
+        print(f"\033[1;32mCongratulations, you guessed the word {word} right!\033[0m")
+        
 
     # Ask if the player wants to retry
     retry = input("Retry? (Y/N):")
