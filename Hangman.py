@@ -76,7 +76,7 @@ def select_word():
 
 # User input a guess
 def make_guess():
- guess = input("Guess a letter:").upper()
+ guess = input("Guess a letter: ").upper()
  return guess
 
 def hangman_game():
